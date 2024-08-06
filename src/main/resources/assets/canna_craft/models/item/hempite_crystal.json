@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "canna_craft:item/hempite_crystal"
+  }
+}

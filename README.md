@@ -1,25 +1,16 @@
+![canna_craft.png](canna_craft.png)
+# CannaCraft
+A mod that allows players to grow and process cannabis. Currently a work in progress (WIP).
 
-Installation information
-=======
+## Items:
+- `Hempite Crystal`: Used to make fertilizer (WIP).
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+## Blocks:
+- `Hempite Ore`: Ore that drops Hempite Crystal, found in the overworld.
+- `Hempite Deepslate Ore`: Ore that drops Hempite Crystal, found deep in the overworld.
+- `Hempite Nether Ore`: Ore that drops Hempite Crystal, found in the Nether.
+- `Hempite End Ore`: Ore that drops Hempite Crystal, found in the End.
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
-
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
-
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
-
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+## Additional Resources:
+- GitHub: [CannaCraft-NeoForge](https://github.com/CodeRandomMC/CanaCraft-NeoForge)
+- CodeRandom Discord: [Join the Discord](https://discord.gg/vwudfztXGS)
