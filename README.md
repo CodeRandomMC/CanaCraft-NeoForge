@@ -13,4 +13,4 @@ A mod that allows players to grow and process cannabis. Currently a work in prog
 
 ## Additional Resources:
 - GitHub: [CannaCraft-NeoForge](https://github.com/CodeRandomMC/CanaCraft-NeoForge)
-- CodeRandom Discord: [Join the Discord](https://discord.gg/vwudfztXGS)
+- Discord: [CodeRandom](https://discord.gg/vwudfztXGS)
