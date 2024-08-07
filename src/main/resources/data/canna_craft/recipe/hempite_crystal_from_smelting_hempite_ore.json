@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "group": "hempite_crystal",
+  "ingredient": {
+    "tag": "canna_craft:hempite_ores"
+  },
+  "result": {
+    "count": 1,
+    "id": "canna_craft:hempite_crystal"
+  }
+}

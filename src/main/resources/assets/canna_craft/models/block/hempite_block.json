@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "canna_craft:block/hempite_block"
+  },
+  "render_type": "minecraft:translucent"
+}

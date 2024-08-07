@@ -1,7 +1,15 @@
 {
   "item.canna_craft.hempite_crystal": "Hempite Crystal",
 
-  "block.canna_craft.hempite_ore": "Hempite Ore",
 
-  "itemGroup.canna_craft.ingredients_tab": "CannaCraft Ingredients"
+  "item.canna_craft.stone_sickle": "Stone Sickle",
+
+  "block.canna_craft.hempite_block": "Block Of Hempite Crystal",
+  "block.canna_craft.hempite_ore": "Hempite Ore",
+  "block.canna_craft.deepslate_hempite_ore": "Hempite Deepslate Ore",
+  "block.canna_craft.nether_hempite_ore": "Hempite Nether Ore",
+  "block.canna_craft.end_stone_hempite_ore": "Hempite End Ore",
+
+  "itemGroup.canna_craft.ingredients_tab": "CannaCraft Ingredients",
+  "itemGroup.canna_craft.natural_blocks_tab": "CannaCraft Natural Blocks"
 }

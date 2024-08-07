@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "canna_craft:block/nether_hempite_ore"
+  }
+}

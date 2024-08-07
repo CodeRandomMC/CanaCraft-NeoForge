@@ -1,17 +1,14 @@
 package com.coderandom.canna_craft.items;
 
+import com.coderandom.canna_craft.blocks.CCBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.ItemLike;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import java.util.Collection;
-import java.util.HashSet;
 import java.util.function.Supplier;
 
 import static com.coderandom.canna_craft.CannaCraft.MODID;
@@ -21,32 +18,57 @@ public class CCTabs {
     private static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
-    private static final Collection<ItemLike> INGREDIENTS = new HashSet<>();
+    private static final Supplier<CreativeModeTab> CANNA_CRAFT_INGREDIENTS;
+    private static final Supplier<CreativeModeTab> CANNA_CRAFT_NATURAL_BLOCKS;
+    private static final Supplier<CreativeModeTab> CANNA_CRAFT_TOOLS;
 
-    private static final Supplier<CreativeModeTab> CANNA_CRAFT_INGREDIENTS = registerIngredientsTab();
+    static {
+        CANNA_CRAFT_TOOLS = registerToolsTab();
+        CANNA_CRAFT_INGREDIENTS = registerIngredientsTab();
+        CANNA_CRAFT_NATURAL_BLOCKS = registerNaturalBlocksTab();
+    }
+
+    public static Supplier<CreativeModeTab> registerToolsTab() {
+        return CREATIVE_MODE_TABS.register("tools_tab", () -> CreativeModeTab.builder()
+                .title(Component.translatable("itemGroup.canna_craft.tools_tab"))
+                .icon(() -> new ItemStack(CCBlocks.HEMPITE_BLOCK))
+                .displayItems((itemDisplayParameters, output) -> {
+                    output.accept(CCItems.STONE_SICKLE);
+
+                })
+                .build()
+        );
+    }
 
     private static Supplier<CreativeModeTab> registerIngredientsTab() {
         return CREATIVE_MODE_TABS.register("ingredients_tab", () -> CreativeModeTab.builder()
                 .title(Component.translatable("itemGroup.canna_craft.ingredients_tab"))
                 .icon(() -> new ItemStack(CCItems.HEMPITE_CRYSTAL.get()))
-                .displayItems((itemDisplayParameters, output) -> INGREDIENTS.forEach(output::accept))
+                .withTabsBefore(ResourceLocation.fromNamespaceAndPath(MODID, "tools_tab"))
+                .displayItems((itemDisplayParameters, output) -> {
+                    output.accept(CCItems.HEMPITE_CRYSTAL);
+                })
                 .build()
         );
     }
 
-    private static void initializeIngredients() {
-        INGREDIENTS.add(CCItems.HEMPITE_CRYSTAL);
-    }
-
-    private static void addCreativeTabs(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            INGREDIENTS.forEach(event::accept);
-        }
+    public static Supplier<CreativeModeTab> registerNaturalBlocksTab() {
+        return CREATIVE_MODE_TABS.register("natural_blocks_tab", () -> CreativeModeTab.builder()
+                .title(Component.translatable("itemGroup.canna_craft.natural_blocks_tab"))
+                .icon(() -> new ItemStack(CCBlocks.HEMPITE_BLOCK))
+                .withTabsBefore(ResourceLocation.fromNamespaceAndPath(MODID, "ingredients_tab"))
+                .displayItems((itemDisplayParameters, output) -> {
+                    output.accept(CCBlocks.HEMPITE_BLOCK);
+                    output.accept(CCBlocks.HEMPITE_ORE);
+                    output.accept(CCBlocks.DEEPSLATE_HEMPITE_ORE);
+                    output.accept(CCBlocks.NETHER_HEMPITE_ORE);
+                    output.accept(CCBlocks.END_STONE_HEMPITE_ORE);
+                })
+                .build()
+        );
     }
 
     public static void register(IEventBus eventBus) {
-        initializeIngredients();
         CREATIVE_MODE_TABS.register(eventBus);
-        eventBus.addListener(CCTabs::addCreativeTabs);
     }
 }

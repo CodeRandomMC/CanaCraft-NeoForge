@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "canna_craft:block/end_stone_hempite_ore"
+  }
+}
