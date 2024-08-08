@@ -3,7 +3,7 @@
 A mod that allows players to grow and process cannabis. Currently, a work in progress (WIP).
 
 ## Tools:
-- `Stone Sickle`: Right click to harvest crops in a 3x3 area replants if fully mature.
+- `[Sickle](https://github.com/CodeRandomMC/CanaCraft-NeoForge/wiki/Sickle)`: Right click to harvest crops in a 3x3 area replants if fully mature.
 
 ## Items:
 - `Hempite Crystal`: Used to make fertilizer (WIP).
