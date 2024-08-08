@@ -10,7 +10,7 @@ A mod that allows players to grow and process cannabis. Currently, a work in pro
 
 ## Blocks:
 - `Block Of Hempite Crystal`: Crafted from hempite crystal for decoration.
-- `Hempite Ore`: Ore that drops Hempite Crystal, found in the overworld.
+- `Hempite Ore`: Ore that drops Hempite Crystals, found in the overworld.
 - `Deepslate Hempite Ore`: Ore that drops Hempite Crystal, found deep in the overworld.
 - `Nether Hempite  Ore`: Ore that drops Hempite Crystal, found in the Nether.
 - `End Hempite Ore`: Ore that drops Hempite Crystal, found in the End.

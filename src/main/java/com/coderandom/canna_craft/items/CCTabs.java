@@ -18,9 +18,9 @@ public class CCTabs {
     private static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
-    private static final Supplier<CreativeModeTab> CANNA_CRAFT_INGREDIENTS;
-    private static final Supplier<CreativeModeTab> CANNA_CRAFT_NATURAL_BLOCKS;
-    private static final Supplier<CreativeModeTab> CANNA_CRAFT_TOOLS;
+    public static final Supplier<CreativeModeTab> CANNA_CRAFT_INGREDIENTS;
+    public static final Supplier<CreativeModeTab> CANNA_CRAFT_NATURAL_BLOCKS;
+    public static final Supplier<CreativeModeTab> CANNA_CRAFT_TOOLS;
 
     static {
         CANNA_CRAFT_TOOLS = registerToolsTab();
@@ -28,10 +28,10 @@ public class CCTabs {
         CANNA_CRAFT_NATURAL_BLOCKS = registerNaturalBlocksTab();
     }
 
-    public static Supplier<CreativeModeTab> registerToolsTab() {
+    private static Supplier<CreativeModeTab> registerToolsTab() {
         return CREATIVE_MODE_TABS.register("tools_tab", () -> CreativeModeTab.builder()
                 .title(Component.translatable("itemGroup.canna_craft.tools_tab"))
-                .icon(() -> new ItemStack(CCBlocks.HEMPITE_BLOCK))
+                .icon(() -> new ItemStack(CCItems.IRON_SICKLE.get()))
                 .displayItems((itemDisplayParameters, output) -> {
                     output.accept(CCItems.WOODEN_SICKLE);
                     output.accept(CCItems.STONE_SICKLE);
@@ -56,7 +56,7 @@ public class CCTabs {
         );
     }
 
-    public static Supplier<CreativeModeTab> registerNaturalBlocksTab() {
+    private static Supplier<CreativeModeTab> registerNaturalBlocksTab() {
         return CREATIVE_MODE_TABS.register("natural_blocks_tab", () -> CreativeModeTab.builder()
                 .title(Component.translatable("itemGroup.canna_craft.natural_blocks_tab"))
                 .icon(() -> new ItemStack(CCBlocks.HEMPITE_BLOCK))

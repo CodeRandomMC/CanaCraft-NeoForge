@@ -1,11 +1,9 @@
 package com.coderandom.canna_craft.items.custom;
 
+import com.coderandom.canna_craft.util.CCTags;
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -14,7 +12,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
@@ -22,10 +19,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Objects;
 
 public class SickleItem extends DiggerItem {
-    private static final TagKey<Block> SICKLE_MINEABLE = BlockTags.create(ResourceLocation.fromNamespaceAndPath("canna_craft", "mineable/sickle"));
 
     public SickleItem(Tier tier) {
-        super(tier, SICKLE_MINEABLE, new Properties());
+        super(tier, CCTags.Blocks.MINEABLE_WITH_SICKLE, new Properties());
     }
 
     @Override
@@ -34,7 +30,7 @@ public class SickleItem extends DiggerItem {
         if (!level.isClientSide()) {
             BlockPos centerPos = context.getClickedPos();
             BlockState centerBlockState = level.getBlockState(centerPos);
-            if (centerBlockState.is(SICKLE_MINEABLE)) {
+            if (centerBlockState.is(CCTags.Blocks.MINEABLE_WITH_SICKLE)) {
                 boolean isInitialMaxAge = false;
                 if (centerBlockState.getBlock() instanceof CropBlock centerCropBlock) {
                     isInitialMaxAge = centerCropBlock.getAge(centerBlockState) == centerCropBlock.getMaxAge();
@@ -44,7 +40,7 @@ public class SickleItem extends DiggerItem {
                     for (int dz = -1; dz <= 1; dz++) {
                         BlockPos pos = centerPos.offset(dx, 0, dz);
                         BlockState blockState = level.getBlockState(pos);
-                        if (blockState.is(SICKLE_MINEABLE)) {
+                        if (blockState.is(CCTags.Blocks.MINEABLE_WITH_SICKLE)) {
                             boolean shouldHarvest = true;
                             if (blockState.getBlock() instanceof CropBlock cropBlock) {
                                 shouldHarvest = isInitialMaxAge ? cropBlock.getAge(blockState) == cropBlock.getMaxAge() : true;
