@@ -1,8 +1,12 @@
 {
   "item.canna_craft.hempite_crystal": "Hempite Crystal",
 
-
+  "item.canna_craft.wood_sickle": "Wooden Sickle",
   "item.canna_craft.stone_sickle": "Stone Sickle",
+  "item.canna_craft.iron_sickle": "Iron Sickle",
+  "item.canna_craft.golden_sickle": "Golden Sickle",
+  "item.canna_craft.diamond_sickle": "Diamond Sickle",
+  "item.canna_craft.netherite_sickle": "Netherite Sickle",
 
   "block.canna_craft.hempite_block": "Block Of Hempite Crystal",
   "block.canna_craft.hempite_ore": "Hempite Ore",

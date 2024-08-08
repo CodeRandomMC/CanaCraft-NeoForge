@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "canna_craft:item/sickle/iron_sickle"
+  }
+}

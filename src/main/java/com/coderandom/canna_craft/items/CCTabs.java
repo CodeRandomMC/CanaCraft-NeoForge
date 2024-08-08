@@ -33,8 +33,12 @@ public class CCTabs {
                 .title(Component.translatable("itemGroup.canna_craft.tools_tab"))
                 .icon(() -> new ItemStack(CCBlocks.HEMPITE_BLOCK))
                 .displayItems((itemDisplayParameters, output) -> {
+                    output.accept(CCItems.WOODEN_SICKLE);
                     output.accept(CCItems.STONE_SICKLE);
-
+                    output.accept(CCItems.IRON_SICKLE);
+                    output.accept(CCItems.GOLDEN_SICKLE);
+                    output.accept(CCItems.DIAMOND_SICKLE);
+                    output.accept(CCItems.NETHERITE_SICKLE);
                 })
                 .build()
         );
