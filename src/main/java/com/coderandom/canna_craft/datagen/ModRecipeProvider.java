@@ -7,7 +7,8 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 
@@ -31,10 +32,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 CCBlocks.END_STONE_HEMPITE_ORE
         );
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, CCItems.HEMPITE_CRYSTAL, 9)
-                .requires(CCBlocks.HEMPITE_BLOCK.get())
-                .unlockedBy("has_hempite_block", has(CCBlocks.HEMPITE_BLOCK.get()))
-                .save(output);
+        RecipeUtil.nineBlockStorageRecipes(output, CCItems.HEMPITE_CRYSTAL, CCBlocks.HEMPITE_BLOCK);
+
+        RecipeUtil.sickle(output, CCItems.WOODEN_SICKLE, ItemTags.PLANKS);
+        RecipeUtil.sickle(output, CCItems.STONE_SICKLE, ItemTags.STONE_TOOL_MATERIALS);
+        RecipeUtil.sickle(output, CCItems.IRON_SICKLE, Items.IRON_INGOT);
+        RecipeUtil.sickle(output, CCItems.GOLDEN_SICKLE, Items.GOLD_INGOT);
+        RecipeUtil.sickle(output, CCItems.DIAMOND_SICKLE, Items.DIAMOND);
+        RecipeUtil.sickle(output, CCItems.NETHERITE_SICKLE, Items.NETHERITE_INGOT);
 
         RecipeUtil.oreSmelting(output, HEMPITE_CRYSTAL_SMELTABLES, RecipeCategory.MISC, CCItems.HEMPITE_CRYSTAL, 0.25f, 150, "hempite_crystal");
         RecipeUtil.oreBlasting(output, HEMPITE_CRYSTAL_SMELTABLES, RecipeCategory.MISC, CCItems.HEMPITE_CRYSTAL, 0.25f, 300, "hempite_crystal");

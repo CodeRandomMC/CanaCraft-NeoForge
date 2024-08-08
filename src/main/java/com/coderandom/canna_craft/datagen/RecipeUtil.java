@@ -5,13 +5,13 @@ import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeOutput;
-import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.data.recipes.*;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
+import net.neoforged.neoforge.registries.DeferredItem;
 
 import java.util.Arrays;
 import java.util.Iterator;
@@ -21,6 +21,34 @@ import java.util.Optional;
 import static com.coderandom.canna_craft.CannaCraft.MODID;
 
 public class RecipeUtil {
+    protected static void sickle(RecipeOutput recipeOutput, DeferredItem<Item> sickleItem, Item ingredientItem) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, sickleItem)
+                .pattern(" # ")
+                .pattern("  #")
+                .pattern("$# ")
+                .define('#', ingredientItem)
+                .define('$', Items.STICK)
+                .unlockedBy(getHasName(ingredientItem), has(ingredientItem))
+                .save(recipeOutput);
+    }
+
+
+    protected static void sickle(RecipeOutput recipeOutput, DeferredItem<Item> sickleItem, TagKey<Item> ingredientTag) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, sickleItem)
+                .pattern(" # ")
+                .pattern("  #")
+                .pattern("$# ")
+                .define('#', ingredientTag)
+                .define('$', Items.STICK)
+                .unlockedBy("has_from_tag", has(ingredientTag))
+                .save(recipeOutput);
+    }
+
+    protected static void nineBlockStorageRecipes(RecipeOutput recipeOutput, ItemLike unpacked, ItemLike packed) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, unpacked, 9).requires(packed).group(unpacked.asItem().getDescriptionId()).unlockedBy(getHasName(packed), has(packed)).save(recipeOutput, MODID + ':' + getItemName(unpacked) + "_unpack");
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, packed).define('#', unpacked).pattern("###").pattern("###").pattern("###").group(packed.asItem().getDescriptionId()).unlockedBy(getHasName(unpacked), has(unpacked)).save(recipeOutput, MODID + ':' + getItemName(packed) + "_packed");
+    }
+
     protected static void oreSmelting(RecipeOutput recipeOutput, List<ItemLike> ingredients, RecipeCategory category, ItemLike result, float experience, int cookingTime, String group) {
         oreCooking(recipeOutput, RecipeSerializer.SMELTING_RECIPE, SmeltingRecipe::new, ingredients, category, result, experience, cookingTime, group, "_from_smelting");
     }
@@ -38,8 +66,6 @@ public class RecipeUtil {
         }
 
     }
-
-
 
     protected static Criterion<InventoryChangeTrigger.TriggerInstance> has(ItemLike itemLike) {
         return inventoryTrigger(net.minecraft.advancements.critereon.ItemPredicate.Builder.item().of(new ItemLike[]{itemLike}));
