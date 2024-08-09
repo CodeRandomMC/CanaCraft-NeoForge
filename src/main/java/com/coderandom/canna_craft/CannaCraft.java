@@ -3,7 +3,7 @@ package com.coderandom.canna_craft;
 import com.coderandom.canna_craft.blocks.CCBlocks;
 import com.coderandom.canna_craft.events.OnServerStart;
 import com.coderandom.canna_craft.items.CCItems;
-import com.coderandom.canna_craft.items.CCTabs;
+import com.coderandom.canna_craft.util.CCTabs;
 import com.mojang.logging.LogUtils;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Blocks;

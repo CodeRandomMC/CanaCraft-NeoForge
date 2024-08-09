@@ -21,44 +21,50 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        tag(CCTags.Blocks.HEMPITE_ORES)
-                .add(
-                        CCBlocks.HEMPITE_ORE.get(),
-                        CCBlocks.DEEPSLATE_HEMPITE_ORE.get(),
-                        CCBlocks.NETHER_HEMPITE_ORE.get(),
-                        CCBlocks.END_STONE_HEMPITE_ORE.get()
-                );
-        tag(CCTags.Blocks.MINEABLE_WITH_SICKLE)
-                .addTag(BlockTags.CROPS)
-                .addTag(BlockTags.FLOWERS)
-                .add(
-                        Blocks.SUGAR_CANE,
-                        Blocks.CHORUS_PLANT,
-                        Blocks.BROWN_MUSHROOM,
-                        Blocks.RED_MUSHROOM,
-                        Blocks.SHORT_GRASS,
-                        Blocks.TALL_GRASS,
-                        Blocks.FERN,
-                        Blocks.LARGE_FERN
-                );
+        tag(CCTags.Blocks.HEMPITE_ORES).add(
+                CCBlocks.HEMPITE_ORE.get(),
+                CCBlocks.DEEPSLATE_HEMPITE_ORE.get(),
+                CCBlocks.NETHER_HEMPITE_ORE.get(),
+                CCBlocks.END_STONE_HEMPITE_ORE.get()
+        );
+
+        tag(CCTags.Blocks.HEMPITE_BLOCKS).add(
+                CCBlocks.HEMPITE_BLOCK.get(),
+                CCBlocks.HEMPITE_STAIRS.get(),
+                CCBlocks.HEMPITE_SLAB.get(),
+                CCBlocks.HEMPITE_WALL.get()
+        );
+
+        tag(CCTags.Blocks.MINEABLE_WITH_SICKLE).add(
+                Blocks.SUGAR_CANE,
+                Blocks.CHORUS_PLANT,
+                Blocks.BROWN_MUSHROOM,
+                Blocks.RED_MUSHROOM,
+                Blocks.SHORT_GRASS,
+                Blocks.TALL_GRASS,
+                Blocks.FERN,
+                Blocks.LARGE_FERN
+        ).addTag(BlockTags.CROPS).addTag(BlockTags.FLOWERS);
+
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .addTag(CCTags.Blocks.HEMPITE_ORES)
-                .add(
-                        CCBlocks.HEMPITE_BLOCK.get()
-                );
-        tag(BlockTags.NEEDS_STONE_TOOL)
-                .add(CCBlocks.HEMPITE_ORE.get())
-                .add(CCBlocks.HEMPITE_BLOCK.get())
-        ;
-        tag(BlockTags.NEEDS_IRON_TOOL)
-                .add(
-                        CCBlocks.DEEPSLATE_HEMPITE_ORE.get()
-                );
-        tag(BlockTags.NEEDS_DIAMOND_TOOL)
-                .add(
-                        CCBlocks.NETHER_HEMPITE_ORE.get(),
-                        CCBlocks.END_STONE_HEMPITE_ORE.get()
-                );
+                .addTag(CCTags.Blocks.HEMPITE_BLOCKS);
 
+        tag(BlockTags.NEEDS_STONE_TOOL).add(
+                CCBlocks.HEMPITE_ORE.get()
+        ).addTag(CCTags.Blocks.HEMPITE_BLOCKS);
+
+        tag(BlockTags.NEEDS_IRON_TOOL).add(
+                CCBlocks.DEEPSLATE_HEMPITE_ORE.get()
+        );
+
+        tag(BlockTags.NEEDS_DIAMOND_TOOL).add(
+                CCBlocks.NETHER_HEMPITE_ORE.get(),
+                CCBlocks.END_STONE_HEMPITE_ORE.get()
+        );
+
+        tag(BlockTags.WALLS).add(
+                CCBlocks.HEMPITE_WALL.get()
+        );
     }
 }

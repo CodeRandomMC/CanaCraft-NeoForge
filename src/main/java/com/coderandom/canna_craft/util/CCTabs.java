@@ -1,6 +1,7 @@
-package com.coderandom.canna_craft.items;
+package com.coderandom.canna_craft.util;
 
 import com.coderandom.canna_craft.blocks.CCBlocks;
+import com.coderandom.canna_craft.items.CCItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;

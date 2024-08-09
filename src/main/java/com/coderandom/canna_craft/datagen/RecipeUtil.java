@@ -11,6 +11,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
+import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 
 import java.util.Arrays;
@@ -42,6 +44,11 @@ public class RecipeUtil {
                 .define('$', Items.STICK)
                 .unlockedBy("has_from_tag", has(ingredientTag))
                 .save(recipeOutput);
+    }
+
+    protected static void stair(RecipeOutput recipeOutput, DeferredBlock<Block> stairs, ItemLike material) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, stairs, 4).define('#', material).pattern("#  ").pattern("## ").pattern("###")
+                .unlockedBy(getHasName(material), has(material)).save(recipeOutput);
     }
 
     protected static void nineBlockStorageRecipes(RecipeOutput recipeOutput, ItemLike unpacked, ItemLike packed) {

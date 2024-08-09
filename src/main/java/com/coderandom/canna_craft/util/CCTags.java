@@ -12,6 +12,7 @@ import static com.coderandom.canna_craft.CannaCraft.MODID;
 public class CCTags {
     public static class Blocks {
         public static final TagKey<Block> HEMPITE_ORES = create("hempite_ores");
+        public static final TagKey<Block> HEMPITE_BLOCKS = create("hempite_blocks");
         public static final TagKey<Block> MINEABLE_WITH_SICKLE = create("mineable/sickle");
 
         private static TagKey<Block> create(String pathName) {

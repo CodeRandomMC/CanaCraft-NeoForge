@@ -33,6 +33,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         RecipeUtil.nineBlockStorageRecipes(output, CCItems.HEMPITE_CRYSTAL, CCBlocks.HEMPITE_BLOCK);
+        slab(output, RecipeCategory.BUILDING_BLOCKS, CCBlocks.HEMPITE_SLAB, CCBlocks.HEMPITE_BLOCK);
+        RecipeUtil.stair(output, CCBlocks.HEMPITE_STAIRS, CCBlocks.HEMPITE_BLOCK);
+        wall(output, RecipeCategory.BUILDING_BLOCKS, CCBlocks.HEMPITE_WALL, CCBlocks.HEMPITE_BLOCK);
+
 
         RecipeUtil.sickle(output, CCItems.WOODEN_SICKLE, ItemTags.PLANKS);
         RecipeUtil.sickle(output, CCItems.STONE_SICKLE, ItemTags.STONE_TOOL_MATERIALS);

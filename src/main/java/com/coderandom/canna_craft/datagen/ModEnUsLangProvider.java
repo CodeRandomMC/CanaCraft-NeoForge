@@ -2,7 +2,7 @@ package com.coderandom.canna_craft.datagen;
 
 import com.coderandom.canna_craft.blocks.CCBlocks;
 import com.coderandom.canna_craft.items.CCItems;
-import com.coderandom.canna_craft.items.CCTabs;
+import com.coderandom.canna_craft.util.CCTabs;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.CreativeModeTab;
 import net.neoforged.neoforge.common.data.LanguageProvider;
@@ -29,6 +29,9 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(CCItems.NETHERITE_SICKLE.get(), "Netherite Sickle");
         // Blocks
         add(CCBlocks.HEMPITE_BLOCK.get(), "Block of Hempite Crystal");
+        add(CCBlocks.HEMPITE_STAIRS.get(), "Hempite Crystal Stairs");
+        add(CCBlocks.HEMPITE_SLAB.get(), "Hempite Crystal Slab");
+        add(CCBlocks.HEMPITE_WALL.get(), "Hempite Crystal Wall");
         add(CCBlocks.HEMPITE_ORE.get(), "Hempite Ore");
         add(CCBlocks.DEEPSLATE_HEMPITE_ORE.get(), "Deepslate Hempite Ore");
         add(CCBlocks.NETHER_HEMPITE_ORE.get(), "Nether Hempite Ore");
