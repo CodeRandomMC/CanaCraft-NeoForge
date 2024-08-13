@@ -1,6 +1,6 @@
 package com.coderandom.canna_craft.datagen;
 
-import com.coderandom.canna_craft.blocks.CCBlocks;
+import com.coderandom.canna_craft.block.CCBlocks;
 import com.coderandom.canna_craft.items.CCItems;
 import com.coderandom.canna_craft.util.CCTabs;
 import net.minecraft.data.PackOutput;
@@ -28,6 +28,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(CCItems.DIAMOND_SICKLE.get(), "Diamond Sickle");
         add(CCItems.NETHERITE_SICKLE.get(), "Netherite Sickle");
         // Blocks
+        add(CCBlocks.PEDESTAL.get(), "Pedestal");
         add(CCBlocks.HEMPITE_BLOCK.get(), "Block of Hempite Crystal");
         add(CCBlocks.HEMPITE_STAIRS.get(), "Hempite Crystal Stairs");
         add(CCBlocks.HEMPITE_SLAB.get(), "Hempite Crystal Slab");
@@ -40,6 +41,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add(CCTabs.CANNA_CRAFT_TOOLS, "CannaCraft Tools");
         add(CCTabs.CANNA_CRAFT_INGREDIENTS, "CannaCraft Ingredients");
         add(CCTabs.CANNA_CRAFT_NATURAL_BLOCKS, "CannaCraft Natural Blocks");
+        add(CCTabs.CANNA_CRAFT_BUILDING_BLOCKS, "CannaCraft Building Blocks");
     }
 
     private void add(Supplier<CreativeModeTab> tab, String name) {

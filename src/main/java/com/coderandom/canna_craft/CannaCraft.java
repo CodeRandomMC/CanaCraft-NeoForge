@@ -1,6 +1,7 @@
 package com.coderandom.canna_craft;
 
-import com.coderandom.canna_craft.blocks.CCBlocks;
+import com.coderandom.canna_craft.block.CCBlocks;
+import com.coderandom.canna_craft.block.entity.CCBlockEntities;
 import com.coderandom.canna_craft.events.OnServerStart;
 import com.coderandom.canna_craft.items.CCItems;
 import com.coderandom.canna_craft.util.CCTabs;
@@ -39,6 +40,9 @@ public class CannaCraft
 
         // Register Creative Mode Tabs
         CCTabs.register(modEventBus);
+
+        // Register Block Entities
+        CCBlockEntities.register(modEventBus);
 
         // Register Events
         NeoForge.EVENT_BUS.register(new OnServerStart());

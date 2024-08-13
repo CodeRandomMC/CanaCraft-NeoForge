@@ -1,6 +1,6 @@
 package com.coderandom.canna_craft.datagen;
 
-import com.coderandom.canna_craft.blocks.CCBlocks;
+import com.coderandom.canna_craft.block.CCBlocks;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;

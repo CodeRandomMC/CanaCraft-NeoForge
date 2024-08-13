@@ -1,6 +1,6 @@
 package com.coderandom.canna_craft.util;
 
-import com.coderandom.canna_craft.blocks.CCBlocks;
+import com.coderandom.canna_craft.block.CCBlocks;
 import com.coderandom.canna_craft.items.CCItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -21,12 +21,14 @@ public class CCTabs {
 
     public static final Supplier<CreativeModeTab> CANNA_CRAFT_INGREDIENTS;
     public static final Supplier<CreativeModeTab> CANNA_CRAFT_NATURAL_BLOCKS;
+    public static final Supplier<CreativeModeTab> CANNA_CRAFT_BUILDING_BLOCKS;
     public static final Supplier<CreativeModeTab> CANNA_CRAFT_TOOLS;
 
     static {
         CANNA_CRAFT_TOOLS = registerToolsTab();
         CANNA_CRAFT_INGREDIENTS = registerIngredientsTab();
         CANNA_CRAFT_NATURAL_BLOCKS = registerNaturalBlocksTab();
+        CANNA_CRAFT_BUILDING_BLOCKS = registerBuildingBlocks();
     }
 
     private static Supplier<CreativeModeTab> registerToolsTab() {
@@ -60,14 +62,29 @@ public class CCTabs {
     private static Supplier<CreativeModeTab> registerNaturalBlocksTab() {
         return CREATIVE_MODE_TABS.register("natural_blocks_tab", () -> CreativeModeTab.builder()
                 .title(Component.translatable("itemGroup.canna_craft.natural_blocks_tab"))
-                .icon(() -> new ItemStack(CCBlocks.HEMPITE_BLOCK))
+                .icon(() -> new ItemStack(CCBlocks.HEMPITE_ORE))
                 .withTabsBefore(ResourceLocation.fromNamespaceAndPath(MODID, "ingredients_tab"))
                 .displayItems((itemDisplayParameters, output) -> {
-                    output.accept(CCBlocks.HEMPITE_BLOCK);
                     output.accept(CCBlocks.HEMPITE_ORE);
                     output.accept(CCBlocks.DEEPSLATE_HEMPITE_ORE);
                     output.accept(CCBlocks.NETHER_HEMPITE_ORE);
                     output.accept(CCBlocks.END_STONE_HEMPITE_ORE);
+                })
+                .build()
+        );
+    }
+
+    private static Supplier<CreativeModeTab> registerBuildingBlocks() {
+        return CREATIVE_MODE_TABS.register("building_blocks_tab", () -> CreativeModeTab.builder()
+                .title(Component.translatable("itemGroup.canna_craft.building_blocks_tab"))
+                .icon(() -> new ItemStack(CCBlocks.HEMPITE_BLOCK))
+                .withTabsBefore(ResourceLocation.fromNamespaceAndPath(MODID, "natural_blocks_tab"))
+                .displayItems((itemDisplayParameters, output) -> {
+                    output.accept(CCBlocks.PEDESTAL);
+                    output.accept(CCBlocks.HEMPITE_BLOCK);
+                    output.accept(CCBlocks.HEMPITE_SLAB);
+                    output.accept(CCBlocks.HEMPITE_STAIRS);
+                    output.accept(CCBlocks.HEMPITE_WALL);
                 })
                 .build()
         );

@@ -14,6 +14,8 @@ public class CCTags {
         public static final TagKey<Block> HEMPITE_ORES = create("hempite_ores");
         public static final TagKey<Block> HEMPITE_BLOCKS = create("hempite_blocks");
         public static final TagKey<Block> MINEABLE_WITH_SICKLE = create("mineable/sickle");
+        public static final TagKey<Block> NEEDS_HEMPITE_TOOL = create("needs_hempite_tool");
+        public static final TagKey<Block> INCORRECT_FOR_HEMPITE = create("incorrect_for_hempite");
 
         private static TagKey<Block> create(String pathName) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(MODID, pathName));

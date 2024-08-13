@@ -1,6 +1,6 @@
 package com.coderandom.canna_craft.datagen;
 
-import com.coderandom.canna_craft.blocks.CCBlocks;
+import com.coderandom.canna_craft.block.CCBlocks;
 import com.coderandom.canna_craft.items.CCItems;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -27,12 +27,12 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         wallItem(CCBlocks.HEMPITE_WALL, CCBlocks.HEMPITE_BLOCK);
         basicItem(CCItems.HEMPITE_CRYSTAL);
-        tool(CCItems.WOODEN_SICKLE);
-        tool(CCItems.STONE_SICKLE);
-        tool(CCItems.IRON_SICKLE);
-        tool(CCItems.GOLDEN_SICKLE);
-        tool(CCItems.DIAMOND_SICKLE);
-        tool(CCItems.NETHERITE_SICKLE);
+        toolItem(CCItems.WOODEN_SICKLE);
+        toolItem(CCItems.STONE_SICKLE);
+        toolItem(CCItems.IRON_SICKLE);
+        toolItem(CCItems.GOLDEN_SICKLE);
+        toolItem(CCItems.DIAMOND_SICKLE);
+        toolItem(CCItems.NETHERITE_SICKLE);
     }
 
     public void buttonItem(DeferredBlock<Block> block, DeferredBlock<Block> baseBlock) {
@@ -57,7 +57,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         return this.basicItem(Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(item.get())));
     }
 
-    public ItemModelBuilder tool(DeferredItem<Item> item) {
+    public ItemModelBuilder toolItem(DeferredItem<Item> item) {
         ResourceLocation resourceLocation = Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(item.get()));
         return this.getBuilder(resourceLocation.toString())
                 .parent(new ModelFile.UncheckedModelFile("item/handheld"))

@@ -1,6 +1,6 @@
 package com.coderandom.canna_craft.datagen;
 
-import com.coderandom.canna_craft.blocks.CCBlocks;
+import com.coderandom.canna_craft.block.CCBlocks;
 import com.coderandom.canna_craft.util.CCTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;

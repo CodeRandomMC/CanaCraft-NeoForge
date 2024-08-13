@@ -1,6 +1,6 @@
 package com.coderandom.canna_craft.datagen;
 
-import com.coderandom.canna_craft.blocks.CCBlocks;
+import com.coderandom.canna_craft.block.CCBlocks;
 import com.coderandom.canna_craft.items.CCItems;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
@@ -40,6 +40,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(CCBlocks.HEMPITE_STAIRS);
         slabDrop(CCBlocks.HEMPITE_SLAB);
         dropSelf(CCBlocks.HEMPITE_WALL);
+        dropSelf(CCBlocks.PEDESTAL);
+        dropSelf(CCBlocks.STONE_PEDESTAL);
         oreDrop(CCBlocks.HEMPITE_ORE, CCItems.HEMPITE_CRYSTAL);
         oreDrop(CCBlocks.DEEPSLATE_HEMPITE_ORE, CCItems.HEMPITE_CRYSTAL, 1, 2);
         oreDrop(CCBlocks.NETHER_HEMPITE_ORE, CCItems.HEMPITE_CRYSTAL, 2, 4);

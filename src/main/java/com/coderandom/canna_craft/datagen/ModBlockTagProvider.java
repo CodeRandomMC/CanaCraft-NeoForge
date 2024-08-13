@@ -1,6 +1,6 @@
 package com.coderandom.canna_craft.datagen;
 
-import com.coderandom.canna_craft.blocks.CCBlocks;
+import com.coderandom.canna_craft.block.CCBlocks;
 import com.coderandom.canna_craft.util.CCTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -43,10 +43,14 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 Blocks.SHORT_GRASS,
                 Blocks.TALL_GRASS,
                 Blocks.FERN,
-                Blocks.LARGE_FERN
+                Blocks.LARGE_FERN,
+                Blocks.NETHER_WART
         ).addTag(BlockTags.CROPS).addTag(BlockTags.FLOWERS);
 
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(
+                        CCBlocks.PEDESTAL.get()
+                )
                 .addTag(CCTags.Blocks.HEMPITE_ORES)
                 .addTag(CCTags.Blocks.HEMPITE_BLOCKS);
 
@@ -66,5 +70,15 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.WALLS).add(
                 CCBlocks.HEMPITE_WALL.get()
         );
+
+        tag(BlockTags.SLABS).add(
+                CCBlocks.HEMPITE_SLAB.get()
+        );
+
+        tag(BlockTags.STAIRS).add(
+                CCBlocks.HEMPITE_STAIRS.get()
+        );
+        tag(CCTags.Blocks.NEEDS_HEMPITE_TOOL).addTag(BlockTags.NEEDS_IRON_TOOL);
+        tag(CCTags.Blocks.INCORRECT_FOR_HEMPITE).addTag(BlockTags.INCORRECT_FOR_IRON_TOOL).remove(CCTags.Blocks.NEEDS_HEMPITE_TOOL);
     }
 }

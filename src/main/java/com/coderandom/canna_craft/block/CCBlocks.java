@@ -1,5 +1,6 @@
-package com.coderandom.canna_craft.blocks;
+package com.coderandom.canna_craft.block;
 
+import com.coderandom.canna_craft.block.custom.PedestalBlock;
 import com.coderandom.canna_craft.items.CCItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -25,6 +26,8 @@ public class CCBlocks {
     public static final DeferredBlock<Block> DEEPSLATE_HEMPITE_ORE;
     public static final DeferredBlock<Block> NETHER_HEMPITE_ORE;
     public static final DeferredBlock<Block> END_STONE_HEMPITE_ORE;
+    public static final DeferredBlock<Block> PEDESTAL;
+    public static final DeferredBlock<Block> STONE_PEDESTAL;
 
     static {
         HEMPITE_BLOCK = registerBlock("hempite_block",
@@ -65,6 +68,10 @@ public class CCBlocks {
                         UniformInt.of(3, 7),
                         BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_ORE))
         );
+        PEDESTAL = registerBlock("pedestal", () ->
+                new PedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ANDESITE).noOcclusion()));
+        STONE_PEDESTAL = registerBlock("stone_pedestal", () ->
+                new PedestalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));
     }
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {

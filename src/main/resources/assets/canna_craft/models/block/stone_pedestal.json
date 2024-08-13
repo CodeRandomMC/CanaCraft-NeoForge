@@ -1,0 +1,8 @@
+{
+	"parent": "canna_craft:block/pedestal",
+	"textures": {
+		"0": "block/stone",
+		"1": "block/white_wool",
+		"particle": "block/stone"
+	}
+}
